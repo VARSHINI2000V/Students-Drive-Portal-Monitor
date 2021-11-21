@@ -1,0 +1,104 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+</head>
+{% for i in companies %}
+<title>{{i.name}}</title>
+  <style>
+    body{
+    background-image: url('https://d19d5sz0wkl0lu.cloudfront.net/dims4/default/b8768e8/2147483647/resize/800x%3E/quality/90/?url=https%3A%2F%2Fatd-brightspot.s3.amazonaws.com%2F8c%2Ff4%2F817622d3492a8c10592b1746cdf0%2Fmaxresdefault.jpg');
+    background-size:100%100%;
+    }
+    nav{
+       width :100%;
+       height:70px;
+       border : none;
+      }
+
+  </style>
+  <body>
+    <form action="/drives/registered/" method="POST">
+        {% csrf_token %}
+    <nav class="navbar navbar-expand-md fixed-top  bg-light">
+      
+      <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+         <ul class="navbar-nav mr-auto">
+    			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		
+                      <li ><a href="/drives/" class="btn btn-light"><b>Back</b></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <li><a href="/placed/" class="btn btn-light"><b>Placed Status</b></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <li><a href="/myprofile/" class="btn btn-light"><b>Profile</b></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                      
+                      <li><a href="/logout/" class="btn btn-warning" ><b>Log Out</b></a></li> 
+    					</ul>
+    			</div>
+    		</nav>
+        <center>
+        
+          </center>
+        
+<canvas id="canvas"></canvas>
+<center>
+<div class="content" style="width:900px;height:1030px;border-radius:10px;background-color:white;border-bottom:50px;">
+<center>
+<br>
+<center>
+    
+<h3 style="color:black;">{{i.name}}</h3></center><br>
+<input type="hidden" readonly value="{{i.name}}" name="company"><br><br>
+
+<label class="labels"style="margin-left:-460px;"><b>Bond</b></label>
+<input type="text" style="width:500px;"class="form-control"readonly value="{{i.bond}}" ><br><br>
+
+<label class="labels"style="margin-left:-430px;"><b>Location</b></label>
+<input type="text"style="width:500px;"class="form-control" readonly value="{{i.location}}"><br><br>
+
+<label class="labels"style="margin-left:-290px;"><b>Full Time Employee Package</b></label>
+<input type="text"style="width:500px;"class="form-control" readonly value="{{i.ftepack}}"><br><br>
+
+<label class="labels"style="margin-left:-380px;"><b>Intern Package</b></label>
+<input type="text"style="width:500px;"class="form-control" readonly value="{{i.internpack}}"><br><br>
+
+<label class="labels"style="margin-left:-460px;"><b>Role</b></label>
+<input type="text" style="width:500px;"class="form-control"readonly value="{{i.role}}"><br><br>
+
+<label class="labels"style="margin-left:-460px;"><b>Date</b></label>
+<input type="text"style="width:500px;"class="form-control" readonly value="{{i.date}}"><br><br>
+
+<label class="labels"style="margin-left:-370px;"><b>Registration Link</b></label>
+<input type="link"style="width:500px;"class="form-control" readonly value="{{i.link}}" style="width: 800px;"><br><br>
+{% endfor %}
+{% for i in students %}
+{% if i.placed == "PLACED" %}
+<h3 class="btn btn-success" style=" cursor: not-allowed;pointer-events: none !important;"><B>PLACED</B></h3>
+{% elif registered %}
+{% for k in registered %}
+{% if k.status == "Registered" %}
+<h3 class="btn btn-success" style=" cursor: not-allowed;pointer-events: none !important;"><B>Registered</B></h3>
+{% elif k.status == "Not Interested" %}
+    <h3  class="btn btn-danger" style=" cursor: not-allowed;pointer-events: none !important;" ><B>Not Interested!</B></h3>
+    {% endif %}
+    {% endfor %}
+    {% else %}
+<button type="submit"class="btn btn-primary" name="registered" value="yes"><B>Register</B></button>
+    <button type="submit" class="btn btn-danger" name="registered" value="no"><B>Not Interested!</B></button>
+    {% endif %}
+    {% endfor %}
+</form>
+<br>
+
+
+        </center>
+        </div>
+        </center>
+        </body>
+        </html>

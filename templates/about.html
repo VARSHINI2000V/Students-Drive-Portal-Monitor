@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+    
+    html {
+      box-sizing: border-box;
+    }
+    
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    
+    .column {
+      float: left;
+      width: 33.3%;
+      margin-bottom: 16px;
+      padding: 0 8px;
+    }
+    
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 8px;
+    }
+    
+    .about-section {
+      padding: 50px;
+      text-align: center;
+      background-color: #474e5d;
+      color: white;
+    }
+    
+    .container {
+      padding: 0 16px;
+    }
+    
+    .container::after, .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    
+    .title {
+      color: grey;
+    }
+    
+    .button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    .button:hover {
+      background-color: #555;
+    }
+    
+    @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+    }
+    
+  
+  /* ------------------------ NAVBAR ----------------*/
+  
+  
+  header{
+    display:flex;
+    justify-content: space-between;
+    color: black;
+    background: rgba(0,0,0,0.2)
+  }
+  
+  header div{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Pacifico;
+    margin: 0 2rem;
+  }
+  
+  header div i{
+    font-size: 2rem;
+    margin: 1rem;
+  }
+  
+  
+  header nav{
+    padding: 1rem 2rem;
+  }
+  
+  nav ul li{
+    list-style: none;
+    display: inline;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 5px;
+  }
+  
+  nav li a{
+    padding: 1rem;
+    margin: 1rem;
+    text-decoration: none;
+    color: black;
+    transition: all 250ms ease-in;
+    border-radius: 2px;
+  }
+  
+  nav li a:hover{
+    background: black;
+    color: white;
+    border-radius: 2px;
+  }
+  
+  
+  
+  /* ------------------------ TOP SECTION ----------------*/
+  
+  .titles{
+    color: white;
+    text-align: center;
+    width: 50vw;
+    margin: 0 auto;
+  }
+  
+  .titles h1{
+    font-family: Pacifico;
+    font-size: 5rem;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 0 black;
+  
+  }
+  
+  .titles p{
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 0 black;
+  }
+  
+  /* ------------------------ BOT SECTION ----------------*/
+  
+  
+  
+  .container-boxes{
+    margin: 0 auto;
+    padding: 0;
+    display:flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    max-width: 80vw;
+  }
+  
+  .box{
+    background: rgba(255,255,255,.5);
+    margin: 1rem;
+    padding: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 350px;
+    max-height: 180px;
+    min-height: 180px;
+    transition: all 250ms ease-out;
+  }
+  
+  .box:hover{
+    background: rgba(255,255,255,.7);
+    transform: translateY(-20%);
+  }
+  
+  .box a{
+    text-decoration: none;
+    color: black;
+  }
+  
+  .icon{
+    font-size: 3rem;
+    padding: 1rem;
+  }
+  
+  .text h3{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 0;
+  }
+  
+  .text p{
+    margin-top: 1rem;
+    line-height: 1.5rem;
+    text-align: left;
+  }
+  
+  .text{
+    padding: .5rem;
+  }
+  
+  
+  /* MEDIAQUERIES */
+  
+  
+  @media (max-width: 1160px){
+     .icon{
+      font-size: 2rem;
+      padding: 0.5rem;
+    }
+    .text h3{
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+  
+    .text p{
+      margin-top: 1rem;
+      line-height: 1.5rem;
+      text-align: left;
+      font-size: .8rem;
+    }
+    nav li a:hover{
+    background: none;
+    color: black;
+    }
+  }
+  
+  
+  @media (max-width: 850px){
+    body{
+      height: 100%;
+    }
+    .container-boxes{
+      flex-direction: column;
+    }
+    .box:hover{
+      background: rgba(255,255,255,.7);
+      transform: none;
+    }
+    .titles h1{
+    font-size: 3rem;
+    }
+  }
+    </style>
+    <header>
+      <div>
+        <i class="fas fa-atom"></i>
+        <p></p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Index</a></li>
+          <li><a href="/login/">Students</a></li>
+          <li><a href="/staff/login/">Staffs</a></li>
+          <li><a href="/adminlogin/">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <div class="about-section">
+      <h1>About Us Page</h1>
+      <p>The Students drive montior application helps to maintain the students placement details. </p>
+      <p>It's a user friendly application.
+                Through this application students can add their drive related details </p>
+    
+                <p>This applications also provides the facilities for staffs to monitor the students who are all attending drives and who are placed.</p>
+                And also admin can add new drive whenever a new drive arrive to that particular department and staff can search for student details easily. <br><br>
+                Stay Happy...! Happy Learning...!
+                </p>
+    </div>
+    <br>
+    <h2 style="text-align:center">Contact Us</h2>
+    
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <div class="container">
+            <h2>Hari Haran B</h2>
+            <p class="title">Developer</p>
+            <p>If any queries contact us..</p>
+            <p>Email:20mx207@psgtech.ac.in</p>
+            <p>Call:9080422781</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="column">
+        <div class="card">
+    
+          <div class="container">
+            <h2>Sri Guru Prasath M</h2>
+            <p class="title">Developer</p>
+            <p>If any queries contact us..</p>
+            <p>Email:20mx220@psgtech.ac.in</p>
+            <p>Call:9080156160</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="card">
+    
+          <div class="container">
+            <h2>Varshini V</h2>
+            <p class="title">Developer</p>
+            <p>If any queries contact us..</p>
+            <p>Email:20mx224@psgtech.ac.in</p>
+            <p>Call:8056925322</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+      </div>
+  
+</body>
+</html>
